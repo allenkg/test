@@ -1,32 +1,37 @@
-# Проект Test
+# Test project
 
-Простейшая API не включает в себя пермишены, индексацию таблиц
+Simple API
 
-## Запуск проекта
+## Clone and Run project
 
-Для запуска проекта выполните следующие шаги:
+```git clone git@github.com:allenkg/test.git```
 
-```bash
-docker-compose build && \
-docker-compose up -d && \
-docker exec -it test_full_dev_web_1 bash -c "python manage.py migrate"
+create virtual env 
+python3 -m venv venv
+
+Run docker commands
+
+```
+docker-compose build
+docker-compose up -d
+docker exec -it <container_name> bash -c "python manage.py migrate"
 ```
 
-войти в контейнер web
+Enter the web container
 ```
 docker ps
 docker exec -it <container_name> bash
 ```
 
-запустить миграции и создать админ пользователя
+Create superuser and populate some data to DB
 ``` 
-python manage.py createsuperuser && \
-python manage.py populate_products && \
+python manage.py createsuperuser
+python manage.py populate_products
 ```
 
-запуск тестов
+Run Test
 ``` pytest ```
 
-### Для самостоятельного тестирования API Doc
+### Check API Doc to manual API requests
 
 

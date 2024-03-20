@@ -92,6 +92,5 @@ coverage.xml
 celerybeat-schedule.*
 
 # Environments
-.env
 .venv
 venv/
